@@ -5,7 +5,7 @@ function refresh(){
 }
 
 function col {
-  awk -v col=$1 '{print $col}'
+  awk -F '\t' -v col=$1 '{print $col}'
 }
 
 function skip {
@@ -23,11 +23,18 @@ function find-text {
 
 function cd() { builtin cd "$@" && ls; }
 
-
 # |Useful Keybindings|
+if test -n "$ZSH_VERSION"; then
 
-bind '"\e\e[D": backward-word' # For Mac, move 1 word backward with (Opt) + (->)
-bind '"\e\e[C": forward-word'  # For Mac, move 1 word forwards with (Opt) + (<-)
+    bindkey "\e\e[D" backward-word
+    bindkey "\e\e[C" forward-word
+
+elif test -n "$BASH_VERSION"; then
+
+    bind '"\e\e[D": backward-word'
+    bind '"\e\e[C": forward-word'
+
+fi
 
 # Useful other bash files
 source ~/bashmarks.sh
