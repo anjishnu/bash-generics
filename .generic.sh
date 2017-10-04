@@ -38,3 +38,4 @@ fi
 
 # Useful other bash files
 source ~/bashmarks.sh
+source ~/.tmux.sh
