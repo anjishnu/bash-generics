@@ -1,36 +1,36 @@
 # Tmux shortcuts
 
-function detach-tmux(){
+function detach_tmux(){
     tmux detach
     }
 
-function tmux-named-session(){
+function tmux_named(){
     # Create new sessions with name
     tmux new -s $1    
 }
 
-function tmux-attach-named(){
+function tmux_attach_named(){
     # Attach to a named session
     tmux a -t $1
 }
 
-function tmux-attach-last(){
+function tmux_attach_last(){
     tmux attach-session
     }
 
-function tmux-ls(){
+function tmux_ls(){
     tmux ls
 }
 
-function tmux-kill-named(){
+function tmux_kill_named(){
     # Kill session bt name
     tmux kill-session -t $1
     }
 
-function tmux-kill(){
+function tmux_kill(){
     tmux kill-session 
 }
 
-function tmux-killall(){
+function tmux_killall(){
     tmux kill-server
 }

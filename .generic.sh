@@ -13,11 +13,13 @@ function skip {
     cut -d' ' -f$n-
 }
 
-function find-file {
+function find_file {
+
     find . -iname '*'$1'*'
+
 }
 
-function find-text {
+function find_text {
     grep -rin $1 $2
 }
 
@@ -37,5 +39,5 @@ elif test -n "$BASH_VERSION"; then
 fi
 
 # Useful other bash files
-source ~/bashmarks.sh
+source ~/.bashmarks.sh
 source ~/.tmux.sh
